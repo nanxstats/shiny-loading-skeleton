@@ -1,0 +1,74 @@
+/* Loading div */
+div.loader {
+	background-color: #fff;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	margin-top: 0px;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+}
+
+.loading-skeleton h1,
+.loading-skeleton h2,
+.loading-skeleton h3,
+.loading-skeleton h4,
+.loading-skeleton h5,
+.loading-skeleton h6,
+.loading-skeleton p,
+.loading-skeleton li,
+.loading-skeleton .btn,
+.loading-skeleton label,
+.loading-skeleton .form-control {
+	color: transparent;
+	appearance: none;
+	-webkit-appearance: none;
+	background-color: #eee;
+	border-color: #eee;
+}
+
+.loading-skeleton h1::placeholder,
+.loading-skeleton h2::placeholder,
+.loading-skeleton h3::placeholder,
+.loading-skeleton h4::placeholder,
+.loading-skeleton h5::placeholder,
+.loading-skeleton h6::placeholder,
+.loading-skeleton p::placeholder,
+.loading-skeleton li::placeholder,
+.loading-skeleton .btn::placeholder,
+.loading-skeleton label::placeholder,
+.loading-skeleton .form-control::placeholder {
+	color: transparent;
+}
+
+@keyframes loading-skeleton {
+	from {
+		opacity: 0.4;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.loading-skeleton {
+	pointer-events: none;
+	animation: loading-skeleton 1s infinite alternate;
+}
+
+.loading-skeleton img {
+	filter: grayscale(100) contrast(0%) brightness(1.8);
+}
+
+/* backport some shiny-specific styles so that the loading skeleton
+   elements won't shift after shiny ui component styles are loaded */
+.form-label,
+.shiny-input-container .control-label {
+	margin-bottom: 0.5rem;
+}
+
+.form-group {
+	margin-bottom: 1rem;
+}
