@@ -62,7 +62,7 @@ div.loader {
 	filter: grayscale(100) contrast(0%) brightness(1.8);
 }
 
-/* backport some shiny-specific styles so that the loading skeleton
+/* Port some shiny-specific styles so that the loading skeleton
    elements won't shift after shiny ui component styles are loaded */
 .form-label,
 .shiny-input-container .control-label {
